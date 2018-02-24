@@ -18,6 +18,7 @@ nav {
 a:hover {
     background-color: #555;
     color: white;
+    padding: 5px;
 }
 
 .active {
@@ -108,13 +109,45 @@ li a:hover {
     flex-grow: 1;
     flex-basis: 25%;
     display: flex;
+    overflow: hidden;
+    position: relative;
 }
 
 .product-image img {
+    display: block;
+    width: 100%
+    height: auto;
     max-width: 200px;
     max-height: 200px;
 }
-t
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.product-image:hover .overlay {
+    opacity: 2;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
 .product-info {
     margin-top: auto;
     font-family: "Muli";
@@ -128,43 +161,6 @@ t
     text-align: center;
     vertical-align: text-bottom;
 }
-
-
-.item{
-    width:200px;
-    text-align:center;
-    display:block;
-    background-color: transparent;
-    border: 1px solid transparent;
-    margin-right: 10px;
-    margin-bottom: 1px;
-    float:left;
-}
-
-.item img {
-    max-width: 200px;
-    max-height: 200px;
-}
-
-#index-gallery{
-    width:465px;
-    margin-left: 350px;
-    margin-top: -250px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .blackberrybun img {
     margin-left: 350px;
@@ -191,7 +187,7 @@ h3 {
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #008CBA;
     color: white;
     padding: 16px;
     font-family: 'Muli';
@@ -230,10 +226,15 @@ h3 {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #007ea8;
 }
 
 .reviews {
+    position: absolute;
+    left: 350px;
+    right: 0;
+    text-align: left;
+    width: 100%;
 }
 
 
