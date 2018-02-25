@@ -22,6 +22,9 @@ nav {
 
 h1 {
     margin: 0;
+    font-family: "Muli";
+    text-decoration: none;
+    color:black;
 }
 
 h2 {
@@ -30,6 +33,14 @@ h2 {
     font-family: 'Muli';
     vertical-align: baseline;
     width: 90%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color:#0000EE;
 }
 
 ul {
