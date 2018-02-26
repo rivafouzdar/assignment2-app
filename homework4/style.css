@@ -4,6 +4,7 @@ header {
     font-family: 'Muli';
 }
 
+/*navbar styling*/
 nav {
     text-align: center;
     margin: 0 auto;
@@ -43,6 +44,7 @@ a:visited {
     color:#0000EE;
 }
 
+/*side navbar styling*/
 ul {
     list-style-type: none;
     margin-left: 70px;
@@ -65,6 +67,7 @@ li a:hover {
     color: white;
 }
 
+/*carousel styling*/
 .carousel {
     max-width: 900px;
     position: relative;
@@ -78,7 +81,7 @@ li a:hover {
     margin-top: 10px;
 }
 
-/* Next & previous buttons */
+/* Next & previous buttons styling */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -93,12 +96,12 @@ li a:hover {
     border-radius: 0 3px 3px 0;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
+/*product card styling*/
 .products {
     display: flex;
     flex-wrap: wrap;
@@ -119,7 +122,7 @@ li a:hover {
 
 .product-image img {
     display: block;
-    width: 100%
+    width: 100%;
     height: auto;
     max-width: 200px;
     max-height: 200px;
@@ -189,6 +192,7 @@ h3 {
     max-height: 500px;
 }
 
+/*dropdown button styling*/
 .dropbtnquantity {
     background-color: #008CBA;
     color: white;
@@ -202,6 +206,7 @@ h3 {
     position: relative;
     display: inline-block;
     margin-left: 870px;
+    margin-top: -50px;
     padding: 20px;
 }
 
@@ -218,6 +223,7 @@ h3 {
     position: absolute;
     display: inline-block;
     margin-left: 50px;
+    margin-top: -38px;
     padding: 20px;
 }
 
@@ -256,6 +262,7 @@ h3 {
     background-color: #007ea8;
 }
 
+/*reviews styling*/
 .reviews text {
     position: absolute;
     left: -520px;
