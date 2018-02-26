@@ -314,7 +314,22 @@ h5 {
     top: 60px;
 }
 
+.submitnewreview {
+    background-color: #600CE8;
+    color: white;
+    padding: 10px;
+    font-family: 'Muli';
+    font-size: 12px;
+    border: none;
+}
 
+.reviewbutton {
+    position: absolute;
+    display: inline-block;
+    margin-left: 355px;
+    margin-top: 30px;
+    padding: 20px;
+}
 
 
 
