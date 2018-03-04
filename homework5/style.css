@@ -1,0 +1,346 @@
+header {
+    text-align: center;
+    padding: 10px;
+    font-family: 'Muli';
+}
+
+/*shopping cart styling*/
+.shoppingcart img {
+    position: absolute;
+    margin-left: 1300px;
+    margin-top: 125px;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+/*navbar styling*/
+nav {
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Muli';
+    border: 1px solid #e7e7e7;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Muli";
+    text-decoration: none;
+    color:black;
+}
+
+h2 {
+    text-align: right;
+    padding-right: 30px;
+    font-family: 'Muli';
+    vertical-align: baseline;
+    width: 90%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color:#0000EE;
+}
+
+/*side navbar styling*/
+ul {
+    list-style-type: none;
+    margin-left: 70px;
+    padding: 30px;
+    width: 200px;
+    background-color: #f1f1f1;
+    font-family: 'Muli';
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: 'Muli';
+}
+
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/*carousel styling*/
+.carousel {
+    max-width: 900px;
+    position: relative;
+    margin-left: 400px;
+    top: -255px;
+}
+
+.text {
+    text-align: center;
+    font-family: 'Muli';
+    margin-top: 10px;
+}
+
+/* Next & previous buttons styling */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/*product card styling*/
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 350px;
+    margin-top: -250px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.product-card {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 25%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.product-image:hover .overlay {
+    opacity: 2;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.product-info {
+    margin-top: auto;
+    font-family: "Muli";
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    float: right;
+    clear: both;
+    display: block;
+    text-align: center;
+    vertical-align: text-bottom;
+}
+
+.blackberrybun img {
+    margin-left: 350px;
+    margin-top: -255px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+
+h2 {
+    font-family: "Muli";
+    margin-left: 600px;
+    margin-top: -325px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+h3 {
+    font-family: "Muli";
+    margin-left: 885px;
+    margin-top: 40px;
+    max-width: 450px;
+    max-height: 500px;
+}
+
+/*dropdown button styling*/
+.dropbtnquantity {
+    background-color: #008CBA;
+    color: white;
+    padding: 16px;
+    font-family: 'Muli';
+    font-size: 16px;
+    border: none;
+}
+
+.dropdownquantity {
+    position: relative;
+    display: inline-block;
+    margin-left: 870px;
+    margin-top: -50px;
+    padding: 20px;
+}
+
+.dropbtnglaze {
+    background-color: #008CBA;
+    color: white;
+    padding: 16px;
+    font-family: 'Muli';
+    font-size: 16px;
+    border: none;
+}
+
+.dropdownglaze {
+    position: absolute;
+    display: inline-block;
+    margin-top: -38px;
+    padding: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Muli';
+}
+
+.dropdown-content a:hover {background: #ddd}
+
+.dropdownquantity:hover .dropdown-content {
+    display: block;
+}
+
+.dropdownquantity:hover .dropbtnquantity {
+    background-color: #007ea8;
+}
+
+.dropdownglaze:hover .dropdown-content {
+    display: block;
+}
+
+.dropdownglaze:hover .dropbtnglaze {
+    background-color: #007ea8;
+}
+
+/*add to cart styling*/
+.dropbtnaddtocart {
+    background-color: #600CE8;
+    color: white;
+    padding: 16px;
+    font-family: 'Muli';
+    font-size: 16px;
+    border: none;
+}
+
+.dropdownaddtocart {
+    position: absolute;
+    display: inline-block;
+    margin-left: 200px;
+    margin-top: -38px;
+    padding: 20px;
+}
+
+
+/*reviews styling*/
+.reviews text {
+    position: absolute;
+    left: -520px;
+    right: 500px;
+    text-align: left;
+    width: 50%;
+}
+
+h4 {
+    font-family: 'Muli';
+    font-weight: normal;
+    color: blue;
+    position: absolute;
+    left: 375px;
+}
+
+h5 {
+    font-family: 'Muli';
+    font-weight: normal;
+    position: relative;
+    left: 375px;
+    top: 60px;
+}
+
+.submitnewreview {
+    background-color: #600CE8;
+    color: white;
+    padding: 10px;
+    font-family: 'Muli';
+    font-size: 12px;
+    border: none;
+}
+
+.reviewbutton {
+    position: absolute;
+    display: inline-block;
+    margin-left: 355px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
