@@ -5,15 +5,23 @@ var fadeTime = 300;
 
 
 /* Assign actions */
-$('.product-quantity input').change( function() {
-  updateQuantity(this);
-  console.log("helpme");
-});
+// $('.product-quantity input').change( function() {
+//   updateQuantity(this);
+//   console.log("helpme");
+// });
 
-$('.product-removal button').click( function() {
-  removeItem(this);
-});
+// $('.product-removal button').click( function() {
+//   removeItem(this);
+// });
 
+$(document).on("change", ".product-quantity", function() {
+    console.log(this);
+    updateQuantity(this);
+})
+
+$(document).on("click", ".product-removal", function() {
+    removeItem(this);
+})
 
 /* Recalculate cart */
 function recalculateCart()
@@ -27,7 +35,7 @@ function recalculateCart()
 
   /* Calculate totals */
   var tax = subtotal * taxRate;
-  var shipping = (subtotal > 0 ? shippingRate : 0);
+  var shipping = 5;
   var total = subtotal + tax + shipping;
 
   /* Update totals display */
@@ -50,17 +58,23 @@ function recalculateCart()
 function updateQuantity(quantityInput)
 {
   /* Calculate line price */
-  var productRow = $(quantityInput).parent().parent();
+  var productRow = $(quantityInput).parent();
   var price = parseFloat(productRow.children('.product-price').text());
   var quantity = $(quantityInput).val();
+  // var quantity = (productRow.children('product-quantity').val());
   var linePrice = price * quantity;
+
+  console.log(productRow);
+  console.log(price);
+  console.log(quantity);
+  console.log(linePrice);
 
   /* Update line price display and recalc cart totals */
   productRow.children('.product-line-price').each(function () {
     $(this).fadeOut(fadeTime, function() {
-      $(this).text(linePrice.toFixed(2));
-      recalculateCart();
-      $(this).fadeIn(fadeTime);
+        $(this).text(linePrice.toFixed(2));
+        recalculateCart();
+        $(this).fadeIn(fadeTime);
     });
   });
 }
