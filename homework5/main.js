@@ -7,6 +7,7 @@ var fadeTime = 300;
 /* Assign actions */
 $('.product-quantity input').change( function() {
   updateQuantity(this);
+  console.log("helpme");
 });
 
 $('.product-removal button').click( function() {
