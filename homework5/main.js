@@ -90,3 +90,51 @@ function removeItem(removeButton)
     recalculateCart();
   });
 }
+
+
+// Dropdown functionality for buttons on blackberry bun page
+var picList = [
+    "BunBunPics/blueberrycinnamonrolls23.jpg",
+    "BunBunPics/sugar.jpg",
+    "BunBunPics/vanilla.jpg",
+    "BunBunPics/chocolate.jpg", ];
+
+$('glaze').change(function() {
+    var val = parseInt($('glaze').val());
+    console.log(val);
+    $('blackberrybun img').attr("src",pictureList[val]);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
