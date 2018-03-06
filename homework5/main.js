@@ -3,7 +3,6 @@ var taxRate = 0.05;
 var shippingRate = 5.00;
 var fadeTime = 300;
 
-
 /* Assign actions */
 // $('.product-quantity input').change( function() {
 //   updateQuantity(this);
@@ -14,7 +13,7 @@ var fadeTime = 300;
 //   removeItem(this);
 // });
 
-$(document).on("change", ".product-quantity", function() {
+$(document).on("change", ".product-quantity input", function() {
     console.log(this);
     updateQuantity(this);
 })
@@ -58,7 +57,7 @@ function recalculateCart()
 function updateQuantity(quantityInput)
 {
   /* Calculate line price */
-  var productRow = $(quantityInput).parent();
+  var productRow = $(quantityInput).parent().parent();
   var price = parseFloat(productRow.children('.product-price').text());
   var quantity = $(quantityInput).val();
   // var quantity = (productRow.children('product-quantity').val());
@@ -91,21 +90,73 @@ function removeItem(removeButton)
   });
 }
 
+function item(quantity, glaze) {
+    this.quantity = quantity;
+    this.glaze = glaze;
+}
 
-// Dropdown functionality for buttons on blackberry bun page
-var picList = [
-    "BunBunPics/blueberrycinnamonrolls23.jpg",
-    "BunBunPics/sugar.jpg",
-    "BunBunPics/vanilla.jpg",
-    "BunBunPics/chocolate.jpg", ];
+function addToCart() {
+    var existingItems = JSON.parse(sessionStorage.getItem("allItems"));
+    if (existingItems == null) existingItems = [];
+    var quantity = $(".quantity :selected").text();
+    var glaze = $(".glaze :selected").text();
+    var item = {
+        "quantity": quantity,
+        "glaze": glaze
+    };
+    sessionStorage.setItem("item", JSON.stringify(item));
+    existingItems.push(item);
+    sessionStorage.setItem("allItems", JSON.stringify(existingItems));
+    console.log(existingItems);
 
-$('glaze').change(function() {
-    var val = parseInt($('glaze').val());
-    console.log(val);
-    $('blackberrybun img').attr("src",pictureList[val]);
-})
+    //update the cart number
+    var retrievedData = sessionStorage.getItem("allItems");
+    var items = JSON.parse(retrievedData);
+    $(".shoppingcarttext").text(items.length);
+    $(".shoppingcarttext").css("font-family", "Muli");
 
+}
 
+function updateCart() {
+    // display the cart visually
+}
+
+// Document Load
+$(document).ready(function() {
+    var retrievedData = sessionStorage.getItem("allItems");
+    var items = JSON.parse(retrievedData);
+    if (items == null) {
+        $(".shoppingcarttext").text("0");
+        $(".shoppingcarttext").css("font-family", "Muli");
+    }
+    else
+    {
+        $(".shoppingcarttext").text(items.length);
+        $(".shoppingcarttext").css("font-family", "Muli");
+    }
+
+    // var cartEmpty = true;
+
+    // var cartItem = JSON.parse(sessionStorage.getItem(""));
+    // console.log(cartItem);
+    // console.log(cartItemList);
+
+    // if (cartItem == null)
+    // {
+    //     $(".shopping-cart").text("Cart Empty");
+    //     $(".shopping-cart").css("font-family", "Muli");
+    // }
+    // else
+    // {
+    //     cartEmpty = false;
+    // }
+
+    $("#dropbtnaddtocart").click(function() {
+        addToCart();
+        updateCart();
+        // console.log(existingItems);
+    });
+});
 
 
 
