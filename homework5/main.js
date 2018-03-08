@@ -3,25 +3,6 @@ var taxRate = 0.05;
 var shippingRate = 5.00;
 var fadeTime = 300;
 
-/* Assign actions */
-// $('.product-quantity input').change( function() {
-//   updateQuantity(this);
-//   console.log("helpme");
-// });
-
-// $('.product-removal button').click( function() {
-//   removeItem(this);
-// });
-
-$(document).on("change", ".product-quantity input", function() {
-    console.log(this);
-    updateQuantity(this);
-})
-
-$(document).on("click", ".product-removal", function() {
-    removeItem(this);
-})
-
 /* Recalculate cart */
 function recalculateCart()
 {
@@ -45,7 +26,7 @@ function recalculateCart()
     $('#cart-total').html(total.toFixed(2));
     if(total == 0){
       $('.checkout').fadeOut(fadeTime);
-    }else{
+    } else{
       $('.checkout').fadeIn(fadeTime);
     }
     $('.totals-value').fadeIn(fadeTime);
@@ -63,10 +44,10 @@ function updateQuantity(quantityInput)
   // var quantity = (productRow.children('product-quantity').val());
   var linePrice = price * quantity;
 
-  console.log(productRow);
-  console.log(price);
-  console.log(quantity);
-  console.log(linePrice);
+  // console.log(productRow);
+  // console.log(price);
+  // console.log(quantity);
+  // console.log(linePrice);
 
   /* Update line price display and recalc cart totals */
   productRow.children('.product-line-price').each(function () {
@@ -82,12 +63,17 @@ function updateQuantity(quantityInput)
 /* Remove item from cart */
 function removeItem(removeButton)
 {
-  /* Remove row from DOM and recalc cart total */
-  var productRow = $(removeButton).parent().parent();
-  productRow.slideUp(fadeTime, function() {
-    productRow.remove();
-    recalculateCart();
-  });
+    /* Remove row from DOM and recalc cart total */
+    var productRow = $(removeButton).parent().parent();
+    console.log(productRow);
+    productRow.slideUp(fadeTime, function() {
+        productRow.remove();
+        recalculateCart();
+    });
+}
+
+function addItem(addToCart) {
+
 }
 
 function item(quantity, glaze) {
@@ -107,7 +93,6 @@ function addToCart() {
     sessionStorage.setItem("item", JSON.stringify(item));
     existingItems.push(item);
     sessionStorage.setItem("allItems", JSON.stringify(existingItems));
-    console.log(existingItems);
 
     //update the cart number
     var retrievedData = sessionStorage.getItem("allItems");
@@ -118,43 +103,46 @@ function addToCart() {
 }
 
 function updateCart() {
-    // display the cart visually
+    var retrievedData = sessionStorage.getItem("allItems");
+    var items = JSON.parse(retrievedData);
+    for (var i=0; i<items.length; i++) {
+        $(".product-quantity").text(items[i].quantity);
+        $(".product-glaze").text(items[i].glaze);
+    }
 }
 
 // Document Load
 $(document).ready(function() {
     var retrievedData = sessionStorage.getItem("allItems");
     var items = JSON.parse(retrievedData);
+
+    //cart empty
     if (items == null) {
+        // update number next to cart
         $(".shoppingcarttext").text("0");
         $(".shoppingcarttext").css("font-family", "Muli");
+        // Say cart empty
+        $(".shopping-cart").text("Cart Empty");
+        $(".shopping-cart").css("font-family", "Muli");
     }
-    else
+    else //cart not empty
     {
+        // update number next to cart
         $(".shoppingcarttext").text(items.length);
         $(".shoppingcarttext").css("font-family", "Muli");
     }
 
-    // var cartEmpty = true;
-
-    // var cartItem = JSON.parse(sessionStorage.getItem(""));
-    // console.log(cartItem);
-    // console.log(cartItemList);
-
-    // if (cartItem == null)
-    // {
-    //     $(".shopping-cart").text("Cart Empty");
-    //     $(".shopping-cart").css("font-family", "Muli");
-    // }
-    // else
-    // {
-    //     cartEmpty = false;
-    // }
-
     $("#dropbtnaddtocart").click(function() {
         addToCart();
         updateCart();
+
         // console.log(existingItems);
+    });
+
+    //remove item from cart
+    $('.remove-product').click( function() {
+        removeItem(this);
+        updateQuantity(this);
     });
 });
 

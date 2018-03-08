@@ -458,29 +458,83 @@ h5 {
 }
 
 /*Shopping cart*/
-.column-labels {
-    margin-top: 20px;
-    font-family: "Muli";
-    font-weight: bold;
+.group:before,
+.group:after {
+    content: '';
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1;
 }
 
-.product-image { float: left; width: 10%; text-align: left; }
-.product-details { float: left; width: 37%; }
+/* Apply clearfix in a few places */
+.shopping-cart, .column-labels, .product, .totals-item {
+  @extend .group;
+}
+
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+  content: '$';
+}
+
+/* Body/Header stuff */
+body {
+  padding: 0px 30px 30px 20px;
+  font-family: "Muli";
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+.column-labels label {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-family: "Muli";
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
+.column-labels product-image {
+    text-indent: -9999px;
+}
+
+.column-labels product-details {
+    text-indent: -9999px;
+}
+
+.column-labels product-removal {
+    text-indent: -9999px;
+}
+
+.product-image { float: left; text-align: left; width: 10%; }
+.product-details { float: left; width: 30%; }
 .product-price { float: left; width: 12%; }
-.product-quantity { float: left; width: 10%; }
-.product-glaze { float: left; width: 10%; }
-.product-removal { float: left; width: 9%; }
+.product-quantity { float: left; width: 14%; }
+.product-glaze { float: left; width: 12%; }
+.product-removal { float: left; width: 10%; }
 .product-line-price { float: left; width: 12%; text-align: right; }
 
 .product {
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid $color-border;
   font-family: "Muli";
+  /*border-bottom: 3px solid;*/
+}
+
+.product-image {
+    text-align: left;
 }
 
 .product-image img {
     width: 100px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .product-title {
@@ -496,9 +550,7 @@ h5 {
 }
 
 .product-quantity {
-    input {
-      width: 40px;
-    }
+    font-family: "Muli";
 }
 
 .remove-product {
@@ -506,7 +558,7 @@ h5 {
     padding: 4px 8px;
     background-color: #c66;
     color: #fff;
-    font-family: $font-bold;
+    font-family: "Muli";
     font-size: 12px;
     border-radius: 3px;
 }
