@@ -7,7 +7,7 @@ header {
 /*shopping cart styling*/
 .shoppingcartimage img {
     position: absolute;
-    margin-left: 1300px;
+    margin-left: 1250px;
     margin-top: 125px;
     max-height: 50px;
     max-width: 50px;
@@ -15,7 +15,7 @@ header {
 
 .shoppingcartimage h2 {
     position: absolute;
-    margin-left: 780px;
+    margin-left: 745px;
     margin-top: 130px;
 }
 
