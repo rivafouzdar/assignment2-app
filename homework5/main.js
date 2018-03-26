@@ -78,16 +78,30 @@ function addToCart() {
     var itemGlaze = $(".glaze :selected").text();
     quantities.push(itemQuantity);
     glazes.push(itemGlaze);
+
+    localStorage.setItem("storedQuantities", JSON.stringify(quantities));
+    localStorage.setItem("storedGlazess", JSON.stringify(glazes));
+
+    // update number next to cart
+    $(".shoppingcarttext").text(quantities.length);
+    $(".shoppingcarttext").css("font-family", "Muli");
+
 }
 
 function displayCart() {
-    cartdata = '<table><tr><th>Product Name</th><th>Quantity</th><th>Glaze</th><th>Price($)</th><th>Total</th></tr>';
+    var retrievedQuantities = localStorage.getItem("storedQuantities");
+    var retrievedGlazes = localStorage.getItem("storedGlazess");
+
+    var quantities2 = JSON.parse(retrievedQuantities);
+    var glazes2 = JSON.parse(retrievedGlazes);
+
+    cartdata = '<table><tr><th>Product Name</th><th>Glaze</th><th>Quantity</th><th>Price($)</th><th>Total</th></tr>';
     total = 0;
 
-    for (i=0; i<quantities.length; i++){
-        total += quantities[i] * 12;
-        cartdata += "<tr><td>" + "Blackberry Bun" + "</td><td>" + quantities[i] +
-        "</td><td>" + glazes[i] + "</td><td>" + "12" + "</td><td>" +
+    for (i=0; i<quantities2.length; i++){
+        total += quantities2[i] * 12;
+        cartdata += "<tr><td>" + "Blackberry Bun" + "</td><td>" + glazes2[i] +
+        "</td><td>" + quantities2[i] + "</td><td>" + "12" + "</td><td>" +
         "</td><td><button onclick='removeItem(" + i + ")'>Delete</button></td></tr>";
     }
 
@@ -96,14 +110,31 @@ function displayCart() {
     document.getElementById('cart').innerHTML = cartdata;
 
     // update number next to cart
-    $(".shoppingcarttext").text(quantities.length);
+    $(".shoppingcarttext").text(quantities2.length);
     $(".shoppingcarttext").css("font-family", "Muli");
 }
 
 function removeItem(a) {
-    quantities.splice(a, 1);
-    glazes.splice(a, 1);
+
+    var retrievedQuantities = localStorage.getItem("storedQuantities");
+    var retrievedGlazes = localStorage.getItem("storedGlazess");
+
+    var quantities2 = JSON.parse(retrievedQuantities);
+    var glazes2 = JSON.parse(retrievedGlazes);
+
+    quantities2.splice(a, 1);
+    glazes2.splice(a, 1);
+
+    localStorage.setItem("storedQuantities", JSON.stringify(quantities2));
+    localStorage.setItem("storedGlazess", JSON.stringify(glazes2));
+
     displayCart()
+
+    console.log(quantities2);
+
+    // update number next to cart
+    $(".shoppingcarttext").text(quantities2.length);
+    $(".shoppingcarttext").css("font-family", "Muli");
 }
 
 // function item(quantity, glaze) {
@@ -154,13 +185,29 @@ $(document).ready(function() {
     //     $(".shopping-cart").css("font-family", "Muli");
     // }
 
-    console.log(quantities);
-    console.log(glazes);
+    var retrievedQuantities = localStorage.getItem("storedQuantities");
+    var retrievedGlazes = localStorage.getItem("storedGlazess");
+
+    var quantities2 = JSON.parse(retrievedQuantities);
+    var glazes2 = JSON.parse(retrievedGlazes);
 
     $("#dropbtnaddtocart").click( function() {
+
         addToCart();
-        displayCart();
+        // displayCart();
+
+        console.log(quantities);
+        console.log(glazes);
+
     });
+
+    if (location.href == "file:///Users/Riva/Desktop/rvf_PUI_2018/homework5/shoppingcart.html" ) {
+        // update number next to cart
+        $(".shoppingcarttext").text(quantities2.length);
+        $(".shoppingcarttext").css("font-family", "Muli");
+
+        displayCart();
+    }
 });
 
 
