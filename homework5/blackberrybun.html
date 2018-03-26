@@ -4,18 +4,18 @@
     <title>Products</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="Assets/style.css">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <!-- javascript -->
-    <script src="main.js" type="text/javascript"></script>
+    <script src="Assets/main.js"></script>
 </head>
 
 <!-- Shopping cart -->
 <div class="shoppingcartimage">
     <a href="shoppingcart.html">
         <h2 class="shoppingcarttext"> 0 </h2>
-        <img class="shoppingcartimg" src="BunBunPics/cart.png" alt="missing">
+        <img class="shoppingcartimg" src="Assets/BunBunPics/cart.png" alt="missing">
     </a>
 </div>
 
@@ -24,87 +24,52 @@
     <a href="homepage.html">
         <h1>BunBun Bake Shop</h1>
         <!-- <h2>My Cart</h2> -->
-        <img src="BunBunPics/images.png" alt="Cinnamon Bun Logo" style="width:128px;height:128px;">
+        <img src="Assets/BunBunPics/images.png" alt="Cinnamon Bun Logo">
     </a>
     <nav class="navbar">
-        <a href="homepage.html" style="text-decoration:none" >HOME</a>
-        <a href="productbrowsing.html" style="text-decoration:none" >PRODUCTS</a>
-        <a href="homepage.html" style="text-decoration:none" >FAQ</a>
-        <a href="homepage.html" style="text-decoration:none" >CONTACT</a>
+        <a href="homepage.html" >HOME</a>
+        <a href="productbrowsing.html" >PRODUCTS</a>
+        <a href="homepage.html" >FAQ</a>
+        <a href="homepage.html" >CONTACT</a>
     </nav>
 </header>
 
 <!-- Side Navbar -->
 <ul>
   <li><a href="productbrowsing.html">ALL PRODUCTS</a></li>
-  <li><a href="cinnamonbunbrowsing.html" style="text-indent:30px">Cinnamon Buns</a></li>
-  <li><a href="productbrowsing.html" style="text-indent:30px">Cakes</a></li>
-  <li><a href="productbrowsing.html" style="text-indent:30px">Muffins</a></li>
-  <li><a href="productbrowsing.html" style="text-indent:30px">Cupcakes</a></li>
+  <li><a href="cinnamonbunbrowsing.html">Cinnamon Buns</a></li>
+  <li><a href="productbrowsing.html">Cakes</a></li>
+  <li><a href="productbrowsing.html">Muffins</a></li>
+  <li><a href="productbrowsing.html">Cupcakes</a></li>
 </ul>
 
 <!-- Blackberry bun information -->
 <div class="blackberrybun">
-    <img id="imageToSwap" class="profile" src="BunBunPics/blueberrycinnamonrolls23.jpg" alt="Image Missing">
-    <img id="imageToSwap2" class="profile" src="BunBunPics/q1.jpeg" alte="Image Missing">
+    <img id="imageToSwap" class="profile" src="Assets/BunBunPics/blueberrycinnamonrolls23.jpg" alt="Image Missing">
+    <img id="imageToSwap2" class="profile" src="Assets/BunBunPics/q1.jpeg" alt="Image Missing">
     <h2>The Blackberry Bun</h2>
     <h3>Our blackberry cinnamon buns are one of our highest-selling items. Each one is baked fresh every morning by our famous baker, Jimmy. Infused with fresh blackberries and artisan crafted to perfection, how can your mouth not be watering already?</h3>
 </div>
 
-<!-- <div class="dropdownquantity">
-    <button class="dropbtnquantity">Quantity</button>
-    <select class="dropdown-contentquantity">
-        <a href="#">1</a>
-        <a href="#">3</a>
-        <a href="#">6</a>
-        <a href="#">12</a>
-    </select>
-</div> -->
-
-<!-- <select id="quantity">
-    <option value="1" selected="selected">1</option>
-    <option value="3">3</option>
-    <option value="6">6</option>
-    <option value="12">12</option>
-</select> -->
-
-
 <div class=glaze>
     <h5> Glaze </h5>
     <select onchange="$('#imageToSwap').attr('src', this.options[this.selectedIndex].value);">
-        <option value="BunBunPics/blueberrycinnamonrolls23.jpg" selected>None</option>
-        <option value="BunBunPics/sugar.jpg">Sugar-milk</option>
-        <option value="BunBunPics/vanilla.png">Vanilla-milk</option>
-        <option value="BunBunPics/chocolate.jpg">Double chocolate</option>
+        <option value="Assets/BunBunPics/blueberrycinnamonrolls23.jpg" selected>None</option>
+        <option value="Assets/BunBunPics/sugar.jpg">Sugar-milk</option>
+        <option value="Assets/BunBunPics/vanilla.png">Vanilla-milk</option>
+        <option value="Assets/BunBunPics/chocolate.jpg">Double chocolate</option>
     </select>
 </div>
 
 <div class=quantity>
     <h5> Quantity </h5>
     <select onchange="$('#imageToSwap2').attr('src', this.options[this.selectedIndex].value);">
-        <option value="BunBunPics/q1.jpeg" selected>1</option>
-        <option value="BunBunPics/q3.jpeg">3</option>
-        <option value="BunBunPics/q6.jpeg">6</option>
-        <option value="BunBunPics/q12.jpeg">12</option>
+        <option value="Assets/BunBunPics/q1.jpeg" selected>1</option>
+        <option value="Assets/BunBunPics/q3.jpeg">3</option>
+        <option value="Assets/BunBunPics/q6.jpeg">6</option>
+        <option value="Assets/BunBunPics/q12.jpeg">12</option>
     </select>
 </div>
-
-<!-- <div class="dropdownglaze">
-    <button class="dropbtnglaze">Glaze</button>
-    <div class="dropdown-contentglaze">
-        <a href="#">None</a>
-        <a href="#">Sugar-milk</a>
-        <a href="#">Vanilla-milk</a>
-        <a href="#">Double chocolate</a>
-    </div>
-</div> -->
-
-<!-- <select id="glaze">
-    <option value="none" selected="selected">None</option>
-    <option value="sugar">Sugar-milk</option>
-    <option value="vanilla">Vanilla-milk</option>
-    <option value="chocolate">Double-chocolate</option>
-</select> -->
 
 <div id="dropdownaddtocart">
     <button id="dropbtnaddtocart">Add to Cart</button>
