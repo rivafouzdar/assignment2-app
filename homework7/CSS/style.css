@@ -1,0 +1,17 @@
+.homeimage img {
+    display: block;
+    margin-left: 90px;
+    margin-right: auto;
+    max-height: 730px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    z-index: -1;
+    position: fixed;
+}
+
+.circleList {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}
