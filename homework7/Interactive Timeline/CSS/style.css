@@ -1,0 +1,30 @@
+.tourButton {
+    font-size: 30px;
+    text-align: center;
+}
+
+header {
+    font-family: "Muli";
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+header img {
+    display: block;
+    width: 30%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header button {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.timeline {
+    font-family: "Muli";
+}
