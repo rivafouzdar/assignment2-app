@@ -1,3 +1,25 @@
+header {
+    font-family: "Muli";
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+header img {
+    display: block;
+    width: 30%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header button {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
 body{
     font-family: "Muli";
 }
@@ -11,15 +33,16 @@ body{
     width: 100%;
     height: 100%;
     padding: 20px;
-    z-index: -1;
-    position: fixed;
+    z-index: -10;
+    position: absolute;
+    overflow: auto;
 }
 
 .circleList {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 10;
 }
 
 #echo {
@@ -35,7 +58,8 @@ body{
 }
 
 #bulb {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     margin-left: -10px;
     margin-top: 340px;
     padding: 5px;
@@ -46,7 +70,8 @@ body{
 }
 
 #roomba {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     margin-left: 415px;
     margin-top: 550px;
     padding: 5px;
@@ -57,7 +82,8 @@ body{
 }
 
 #nest {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     margin-left: 250px;
     margin-top: 350px;
     padding: 5px;
@@ -68,7 +94,8 @@ body{
 }
 
 #security {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     margin-left: 520px;
     margin-top: 390px;
     padding: 5px;
