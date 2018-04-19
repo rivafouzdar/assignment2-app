@@ -23,3 +23,7 @@ h1 {
 .timeline {
     font-family: "Muli";
 }
+
+.timeline__content img {
+    max-width: 560px;
+}

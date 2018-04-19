@@ -2,6 +2,7 @@ header {
     font-family: "Muli";
     text-align: center;
     padding-bottom: 20px;
+    background-color: white;
 }
 
 header img {
@@ -22,6 +23,7 @@ h1 {
 
 body{
     font-family: "Muli";
+    background-color: #b6ad9c;
 }
 
 .homeimage img {
@@ -128,6 +130,14 @@ body{
     border: 1px solid #888;
     width: 80%;
     height: 60%;
+    animation-name: animatetop;
+    animation-duration: 2s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
 }
 
 .modalImg {
