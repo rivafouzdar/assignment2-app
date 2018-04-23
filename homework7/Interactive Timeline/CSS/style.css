@@ -1,3 +1,4 @@
+/* header stylings */
 header {
     font-family: "Muli";
     text-align: center;
@@ -20,6 +21,7 @@ h1 {
     text-align: center;
 }
 
+/* timeline stylings, rest is in timeline.css, which was downloaded from API */
 .timeline {
     font-family: "Muli";
 }

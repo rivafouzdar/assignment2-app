@@ -1,3 +1,4 @@
+/* header styling */
 header {
     font-family: "Muli";
     text-align: center;
@@ -21,11 +22,13 @@ h1 {
     text-align: center;
 }
 
+/* general body styling */
 body{
     font-family: "Muli";
     background-color: #b6ad9c;
 }
 
+/* home image styling */
 .homeimage img {
     display: block;
     margin-left: 90px;
@@ -40,6 +43,7 @@ body{
     overflow: auto;
 }
 
+/* styling for overal circleList */
 .circleList {
     position: relative;
     width: 100%;
@@ -47,6 +51,7 @@ body{
     z-index: 10;
 }
 
+/* styling for individual svg red circles */
 #echo {
     position: relative;
     display: inline-block;
@@ -174,6 +179,7 @@ body{
     cursor: pointer;
 }
 
+/* more general styling */
 h3 {
     font-weight: normal;
 }
